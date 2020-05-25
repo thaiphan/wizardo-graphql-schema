@@ -1,0 +1,8 @@
+name: Wizardo
+type: module
+description: Wizardo
+package: Wizardo
+core: 8.x
+dependencies:
+  - graphql:graphql
+  - node:node

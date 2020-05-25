@@ -1,0 +1,15 @@
+type Article implements NodeInterface {
+  id: Int!
+  title: String
+  author: String
+}
+
+type Page implements NodeInterface {
+  id: Int!
+  title: String
+}
+
+interface NodeInterface {
+  id: Int!
+  title: String
+}
