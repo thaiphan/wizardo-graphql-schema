@@ -52,6 +52,15 @@ class WizardoSchemaExtension extends SdlSchemaExtensionPluginBase {
       )
     );
 
+    $registry->addFieldResolver('Article', 'description',
+      $builder->compose(
+        $builder->produce('property_path')
+          ->map('type', $builder->fromValue('entity:node'))
+          ->map('value', $builder->fromParent())
+          ->map('path', $builder->fromValue('body.value'))
+      )
+    );
+
     $registry->addFieldResolver('Article', 'author',
       $builder->compose(
         $builder->produce('entity_owner')
@@ -72,6 +81,15 @@ class WizardoSchemaExtension extends SdlSchemaExtensionPluginBase {
       $builder->compose(
         $builder->produce('entity_label')
           ->map('entity', $builder->fromParent())
+      )
+    );
+
+    $registry->addFieldResolver('Page', 'description',
+      $builder->compose(
+        $builder->produce('property_path')
+          ->map('type', $builder->fromValue('entity:node'))
+          ->map('value', $builder->fromParent())
+          ->map('path', $builder->fromValue('body.value'))
       )
     );
   }

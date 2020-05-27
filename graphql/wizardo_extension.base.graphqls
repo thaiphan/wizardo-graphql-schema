@@ -1,15 +1,18 @@
 type Article implements NodeInterface {
   id: Int!
   title: String
+  description: String
   author: String
 }
 
 type Page implements NodeInterface {
   id: Int!
   title: String
+  description: String
 }
 
 interface NodeInterface {
   id: Int!
   title: String
+  description: String
 }
