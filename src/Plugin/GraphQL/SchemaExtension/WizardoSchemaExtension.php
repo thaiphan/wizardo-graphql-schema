@@ -96,10 +96,8 @@ class WizardoSchemaExtension extends SdlSchemaExtensionPluginBase {
 
   private function addQueryTypes(ResolverRegistryInterface $registry, ResolverBuilder $builder) {
     $registry->addFieldResolver('Query', 'route', $builder->compose(
-      $builder->produce('route_load')
+      $builder->produce('wizardo_route_entity')
         ->map('path', $builder->fromArgument('path')),
-      $builder->produce('route_entity')
-        ->map('url', $builder->fromParent())
     ));
   }
 
